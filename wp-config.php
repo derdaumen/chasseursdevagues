@@ -27,7 +27,7 @@ define('DB_USER', 'wa4225_2');
 define('DB_PASSWORD', 'N&Rd2=3SQLdb2');
 
 /** Ersetze localhost mit der MySQL-Serveradresse */
-define('DB_HOST', '127.0.0.1:3307');
+define('DB_HOST', 'localhost');
 
 /** Der Datenbankzeichensatz der beim Erstellen der Datenbanktabellen verwendet werden soll */
 define('DB_CHARSET', 'utf8');
