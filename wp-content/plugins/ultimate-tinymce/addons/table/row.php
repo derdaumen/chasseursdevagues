@@ -1,17 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<?php ob_start(); ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<title>{#table_dlg.row_title}</title>
 	<?php
-	$file = dirname(__FILE__);
-	$file = substr($file, 0, stripos($file, "wp-content") );
-	require( $file . "/wp-load.php");
-	$url = includes_url();
-	echo '<script type="text/javascript" src="'.$url.'js/tinymce/tiny_mce_popup.js'.'"></script>';
-	echo '<script type="text/javascript" src="'.$url.'js/tinymce/utils/mctabs.js'.'"></script>';
-	echo '<script type="text/javascript" src="'.$url.'js/tinymce/utils/form_utils.js'.'"></script>';
-	echo '<script type="text/javascript" src="'.$url.'js/tinymce/utils/validate.js'.'"></script>';
-	echo '<script type="text/javascript" src="'.$url.'js/tinymce/utils/editable_selects.js'.'"></script>';
+	include ('../../includes/tinymce_addon_scripts.php');
 	?>
     <!--
 	<script type="text/javascript" src="../../tinymce/tiny_mce_popup.js"></script>
@@ -24,11 +16,11 @@
 	<link href="css/row.css" rel="stylesheet" type="text/css" />
 </head>
 <body id="tablerow" style="display: none" role="application">
-	<form onsubmit="updateAction();return false;" action="#">
+	<form onSubmit="updateAction();return false;" action="#">
 		<div class="tabs">
 			<ul>
-				<li id="general_tab" class="current" aria-controls="general_panel"><span><a href="javascript:mcTabs.displayTab('general_tab','general_panel');" onmousedown="return false;">{#table_dlg.general_tab}</a></span></li>
-				<li id="advanced_tab" aria-controls="advanced_panel"><span><a href="javascript:mcTabs.displayTab('advanced_tab','advanced_panel');" onmousedown="return false;">{#table_dlg.advanced_tab}</a></span></li>
+				<li id="general_tab" class="current" aria-controls="general_panel"><span><a href="javascript:mcTabs.displayTab('general_tab','general_panel');" onMouseDown="return false;">{#table_dlg.general_tab}</a></span></li>
+				<li id="advanced_tab" aria-controls="advanced_panel"><span><a href="javascript:mcTabs.displayTab('advanced_tab','advanced_panel');" onMouseDown="return false;">{#table_dlg.advanced_tab}</a></span></li>
 			</ul>
 		</div>
 
@@ -84,7 +76,7 @@
 
 						<tr>
 							<td><label for="height">{#table_dlg.height}</label></td>
-							<td class="col2"><input name="height" type="text" id="height" value="" size="7" maxlength="7" onchange="changedSize();" class="size" /></td>
+							<td class="col2"><input name="height" type="text" id="height" value="" size="7" maxlength="7" onChange="changedSize();" class="size" /></td>
 						</tr>
 					</table>
 				</fieldset>
@@ -102,7 +94,7 @@
 
 						<tr>
 							<td><label for="style">{#table_dlg.style}</label></td>
-							<td><input type="text" id="style" name="style" value="" style="width: 200px;" onchange="changedStyle();" /></td>
+							<td><input type="text" id="style" name="style" value="" style="width: 200px;" onChange="changedStyle();" /></td>
 						</tr>
 
 						<tr>
@@ -128,7 +120,7 @@
 							<td>
 								<table role="presentation" border="0" cellpadding="0" cellspacing="0">
 									<tr>
-										<td><input id="backgroundimage" name="backgroundimage" type="text" value="" style="width: 200px" onchange="changedBackgroundImage();" /></td>
+										<td><input id="backgroundimage" name="backgroundimage" type="text" value="" style="width: 200px" onChange="changedBackgroundImage();" /></td>
 										<td id="backgroundimagebrowsercontainer">&nbsp;</td>
 									</tr>
 								</table>
@@ -141,7 +133,7 @@
 								<span role="group" aria-labelledby="bgcolor_label">
 								<table role="presentation" border="0" cellpadding="0" cellspacing="0">
 									<tr>
-										<td><input id="bgcolor" name="bgcolor" type="text" value="" size="9" onchange="updateColor('bgcolor_pick','bgcolor');changedColor();" /></td>
+										<td><input id="bgcolor" name="bgcolor" type="text" value="" size="9" onChange="updateColor('bgcolor_pick','bgcolor');changedColor();" /></td>
 										<td id="bgcolor_pickcontainer">&nbsp;</td>
 									</tr>
 								</table>
@@ -164,7 +156,7 @@
 			</div>
 
 			<input type="submit" id="insert" name="insert" value="{#update}" />
-			<input type="button" id="cancel" name="cancel" value="{#cancel}" onclick="tinyMCEPopup.close();" />
+			<input type="button" id="cancel" name="cancel" value="{#cancel}" onClick="tinyMCEPopup.close();" />
 		</div>
 	</form>
 </body>

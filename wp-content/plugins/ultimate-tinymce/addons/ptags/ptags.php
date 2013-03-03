@@ -1,17 +1,15 @@
+<?php ob_start(); ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>{#ptags_dlg.titleP}</title>
-<?php
-	$file = dirname(__FILE__);
-	$file = substr($file, 0, stripos($file, "wp-content") );
-	require( $file . "/wp-load.php");
-	$url = includes_url();
-	echo '<script type="text/javascript" src="'.$url.'js/tinymce/tiny_mce_popup.js'.'"></script>';
-?>
-<!--
-<script type="text/javascript" src="../../tinymce/tiny_mce_popup.js"></script>
--->
-<script type="text/javascript" src="js/dialog.js"></script>
-<link rel="stylesheet" type="text/css" href="css/tagwrap.css" />
+    <title>{#ptags_dlg.titleP}</title>
+    <?php
+    include ('../../includes/tinymce_addon_scripts.php');
+    ?>
+    <!--
+    <script type="text/javascript" src="../../tinymce/tiny_mce_popup.js"></script>
+    -->
+    <script type="text/javascript" src="js/dialog.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/tagwrap.css" />
 </head>
 
 <body>

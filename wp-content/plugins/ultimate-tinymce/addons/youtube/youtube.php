@@ -1,13 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<?php ob_start(); ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <title>{#youtube_dlg.title}</title>
   <?php
-	$file = dirname(__FILE__);
-	$file = substr($file, 0, stripos($file, "wp-content") );
-	require( $file . "/wp-load.php");
-	$url = includes_url();
-	echo '<script type="text/javascript" src="'.$url.'js/tinymce/tiny_mce_popup.js'.'"></script>';
+	include ('../../includes/tinymce_addon_scripts.php');
 	?>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <!--
@@ -23,7 +19,7 @@
 <div class="yinstr">
 	<p>{#youtube_dlg.instr}</p>
 </div>
-<form onsubmit="YouTubeDialog.insert();return false;" action="#">
+<form onSubmit="YouTubeDialog.insert();return false;" action="#">
  <div class="mceActionPanel">
  <table>
  <tr>
@@ -95,8 +91,8 @@
   </div>
   <div class="mceActionPanel">
     <div style="float:left;padding-top:5px">
-      <input type="button" id="insert" name="insert" value="{#insert}" onclick="YouTubeDialog.insert();" />&nbsp;
-      <input type="button" id="cancel" name="cancel" value="{#cancel}" onclick="tinyMCEPopup.close();" />
+      <input type="button" id="insert" name="insert" value="{#insert}" onClick="YouTubeDialog.insert();" />&nbsp;
+      <input type="button" id="cancel" name="cancel" value="{#cancel}" onClick="tinyMCEPopup.close();" />
     </div>
   </div>
 </form>

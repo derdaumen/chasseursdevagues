@@ -1,15 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<?php ob_start(); ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<title>{#advhr.advhr_desc}</title>
     <?php
-	$file = dirname(__FILE__);
-	$file = substr($file, 0, stripos($file, "wp-content") );
-	require( $file . "/wp-load.php");
-	$url = includes_url();
-	echo '<script type="text/javascript" src="'.$url.'js/tinymce/tiny_mce_popup.js'.'"></script>';
-	echo '<script type="text/javascript" src="'.$url.'js/tinymce/utils/mctabs.js'.'"></script>';
-	echo '<script type="text/javascript" src="'.$url.'js/tinymce/utils/form_utils.js'.'"></script>';
+	include ('../../includes/tinymce_addon_scripts.php');
 	?>
     <!--
 	<script type="text/javascript" src="../../tinymce/tiny_mce_popup.js"></script>
@@ -20,10 +14,10 @@
 	<link href="css/advhr.css" rel="stylesheet" type="text/css" />
 </head>
 <body role="application">
-<form onsubmit="AdvHRDialog.update();return false;" action="#">
+<form onSubmit="AdvHRDialog.update();return false;" action="#">
 	<div class="tabs">
 		<ul>
-			<li id="general_tab" class="current" aria-controls="general_panel"><span><a href="javascript:mcTabs.displayTab('general_tab','general_panel');" onmousedown="return false;">{#advhr.advhr_desc}</a></span></li>
+			<li id="general_tab" class="current" aria-controls="general_panel"><span><a href="javascript:mcTabs.displayTab('general_tab','general_panel');" onMouseDown="return false;">{#advhr.advhr_desc}</a></span></li>
 		</ul>
 	</div>
 
@@ -62,7 +56,7 @@
 
 	<div class="mceActionPanel">
 		<input type="submit" id="insert" name="insert" value="{#insert}" />
-		<input type="button" id="cancel" name="cancel" value="{#cancel}" onclick="tinyMCEPopup.close();" />
+		<input type="button" id="cancel" name="cancel" value="{#cancel}" onClick="tinyMCEPopup.close();" />
 	</div>
 </form>
 </body>

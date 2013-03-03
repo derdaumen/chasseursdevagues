@@ -1,16 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<?php ob_start(); ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<title>{#xhtmlxtras_dlg.attribs_title}</title>
 	<?php
-	$file = dirname(__FILE__);
-	$file = substr($file, 0, stripos($file, "wp-content") );
-	require( $file . "/wp-load.php");
-	$url = includes_url();
-	echo '<script type="text/javascript" src="'.$url.'js/tinymce/tiny_mce_popup.js'.'"></script>';
-	echo '<script type="text/javascript" src="'.$url.'js/tinymce/utils/mctabs.js'.'"></script>';
-	echo '<script type="text/javascript" src="'.$url.'js/tinymce/utils/form_utils.js'.'"></script>';
-	echo '<script type="text/javascript" src="'.$url.'js/tinymce/utils/editable_selects.js'.'"></script>';
+	include ('../../includes/tinymce_addon_scripts.php');
 	?>
     <!--
 	<script type="text/javascript" src="../../tinymce/tiny_mce_popup.js"></script>
@@ -23,11 +16,11 @@
 </head>
 <body style="display: none" role="application" aria-labelledby="app_title">
 <span style="display:none;" id="app_title">{#xhtmlxtras_dlg.attribs_title}</span>
-<form onsubmit="insertAction();return false;" action="#">
+<form onSubmit="insertAction();return false;" action="#">
 	<div class="tabs">
 		<ul>
-			<li id="general_tab" class="current" aria-controls="general_panel"><span><a href="javascript:mcTabs.displayTab('general_tab','general_panel');" onmousedown="return false;">{#xhtmlxtras_dlg.attribute_attrib_tab}</a></span></li>
-			<li id="events_tab" aria-controls="events_panel"><span><a href="javascript:mcTabs.displayTab('events_tab','events_panel');" onmousedown="return false;">{#xhtmlxtras_dlg.attribute_events_tab}</a></span></li>
+			<li id="general_tab" class="current" aria-controls="general_panel"><span><a href="javascript:mcTabs.displayTab('general_tab','general_panel');" onMouseDown="return false;">{#xhtmlxtras_dlg.attribute_attrib_tab}</a></span></li>
+			<li id="events_tab" aria-controls="events_panel"><span><a href="javascript:mcTabs.displayTab('events_tab','events_panel');" onMouseDown="return false;">{#xhtmlxtras_dlg.attribute_events_tab}</a></span></li>
 		</ul>
 	</div>
 
@@ -154,7 +147,7 @@
 	</div>
 	<div class="mceActionPanel">
 		<input type="submit" id="insert" name="insert" value="{#insert}" />
-		<input type="button" id="cancel" name="cancel" value="{#cancel}" onclick="tinyMCEPopup.close();" />
+		<input type="button" id="cancel" name="cancel" value="{#cancel}" onClick="tinyMCEPopup.close();" />
 	</div>
 </form>
 </body>

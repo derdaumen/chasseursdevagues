@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: tinymce, editor, buttons, button, add, cut, copy, paste, font, font style, font select, font color, table, tables, visual editor, emoticons, emotions, smilies, smiley, smily, search, replace, colors, color, anchor, advance, advanced, links, link, popup, javascript, upgrade, update, admin, image, images, citations, preview, html, custom, custom css, css, borders, pages, posts, pretty, colorful, moods, animated smilieswidget, php, php widget, shortcode, shortcodes, style, styles, plugin, login, excerpt, id, post, page, youtube, syntax, highlight, highlighter, image maps
 Requires at least: 3.3.1
 Tested up to: 3.6
-Stable tag: 4.0.3
+Stable tag: 4.0.9
 
 Description: Beef up your visual tinymce editor with a plethora of advanced options.
 
@@ -147,6 +147,49 @@ Please use my <a href="http://forum.joshlobe.com/member.php?action=register&refe
 * Simply too many features to list!!
 
 == Changelog ==
+
+= 4.0.9 =
+* 03-01-2013
+
+= Bug Fixes =
+* Fixed additional "headers already sent" warnings.
+
+= 4.0.8 =
+* 02-24-2013
+
+= Bug Fixes =
+* Fixed "text" tab not being hidden on a new post/page (when option is enabled).
+* Fixed security vulnerability by dis-engaging direct use of the wp-content directory.
+
+= 4.0.7 =
+* 02-03-2013
+
+= Bug Fixes =
+* Fixed additional "Session Start" Errors.
+
+= 4.0.6 =
+* 02-02-2013
+
+= Bug Fixes =
+* Fixed "Session Start" Errors. I consider this a critical update. 
+
+= 4.0.5 =
+* 01-22-2013
+
+= Tweaks =
+* Added option to completely disable all plugin author styling.  This will give the plugin admin settings page a very "vanilla" WordPress feel.  All tabs, sidebar information, plugins listing styles, scroll to top button, etc. will be removed.  This option can be found in the "Admin Options" of the settings page.
+
+= 4.0.4 =
+* 01-17-2013
+
+= Bug Fixes =
+* Fixed Advanced Insert/Edit link button.
+* Fixed Clear Div buttons.
+* Fixed NextPage button.
+
+= Tweaks =
+* Moved the above mentioned three buttons out of the "Misc Features" section and into the "Buttons Group 2" section.
+* If these buttons were active... they will need to be re-activated after the upgrade process.
 
 = 4.0.3 =
 * 01-08-2013
